@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import "./App.css";
-import About from "./components/About";
+// import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React from "react";
@@ -50,7 +50,7 @@ function App() {
         <div className="container my-3">
           {/* <Switch> */}
             {/* <Route exact path="/about"> */}
-              <About />
+              {/* <About /> */}
             {/* </Route> */}
             {/* <Route exact path="/"> */}
               <TextForm
