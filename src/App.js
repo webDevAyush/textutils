@@ -1,12 +1,12 @@
 // import logo from './logo.svg';
 import "./App.css";
-// import About from "./components/About";
+import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React from "react";
 import Alert from "./components/Alert";
 
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = React.useState("light");
@@ -38,7 +38,7 @@ function App() {
   };
   return (
     <>
-      {/* <Router> */}
+      <Router>
         <Navbar
           title="TextUTils"
           about="About US"
@@ -48,22 +48,22 @@ function App() {
         <Alert alert={alert} />
         {/* <Navbar about='This is ABout Us' /> */}
         <div className="container my-3">
-          {/* <Switch> */}
-            {/* <Route exact path="/about"> */}
-              {/* <About /> */}
-            {/* </Route> */}
-            {/* <Route exact path="/"> */}
+          <Switch>
+            <Route exact path="/about">
+              <About mode={mode}/>
+            </Route>
+            <Route exact path="/">
               <TextForm
-                heading="Enter The Text to Analyze Below"
+                heading="Try - TextUtils - Word Counter, Character Counter"
                 mode={mode}
                 showAlert={showAlert}
               />
-            {/* </Route> */}
+            </Route>
 
           {/* <About /> */}
-          {/* </Switch> */}
+          </Switch>
         </div>
-      {/* </Router> */}
+      </Router>
     </>
   );
 }

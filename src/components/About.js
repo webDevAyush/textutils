@@ -1,35 +1,40 @@
 import React from "react";
 
-export default function About() {
+export default function About(props) {
 
-const [myStyle, setMyStyle] = React.useState({
-  color: "white",
-  backgroundColor: 'black'
-})
-const [btnText, setbtnText] = React.useState("Enable Dark Mode")
-let toogleStyle = () => {
-
-  if(myStyle.color === "white"){
-    setMyStyle({
-      color: 'black',
-      backgroundColor: 'white',
-      border: '2px solid black'
-
-    })
-    setbtnText('Enable Dark Mode')
-  }
-    else{setMyStyle({
-        color: 'white',
-        backgroundColor: 'black',
-        border: '1px solid white'
-    })
-    setbtnText('Enable Light Mode')
-
-  }
-
-
-  console.log("Dark mode is clicked")
+let myStyle = {
+  color: props.mode === 'dark' ? 'white'  : 'black',
+  backgroundColor: props.mode === 'dark' ? 'rgb(3 24 78 / 70%)'  : 'white'
 }
+
+// const [myStyle, setMyStyle] = React.useState({
+//   color: "white",
+//   backgroundColor: 'black'
+// })
+// const [btnText, setbtnText] = React.useState("Enable Dark Mode")
+// let toogleStyle = () => {
+
+//   if(myStyle.color === "white"){
+//     setMyStyle({
+//       color: 'black',
+//       backgroundColor: 'white',
+//       border: '2px solid black'
+
+//     })
+//     setbtnText('Enable Dark Mode')
+//   }
+//     else{setMyStyle({
+//         color: 'white',
+//         backgroundColor: 'black',
+//         border: '1px solid white'
+//     })
+//     setbtnText('Enable Light Mode')
+
+//   }
+
+
+//   console.log("Dark mode is clicked")
+// }
 
   return (
     <div className="container my-3" style={myStyle}>
@@ -46,7 +51,7 @@ let toogleStyle = () => {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Accordion Item #1
+              <strong>Analyze Your text</strong>
             </button>
           </h2>
           <div
@@ -56,14 +61,7 @@ let toogleStyle = () => {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              Textutils gives you a way to analyze your text quickly effecientlly. Be it word count or character count or lots more to do.
             </div>
           </div>
         </div>
@@ -78,7 +76,7 @@ let toogleStyle = () => {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Accordion Item #2
+             <strong>Free to Use</strong> 
             </button>
           </h2>
           <div
@@ -88,14 +86,7 @@ let toogleStyle = () => {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
-              <strong>This is the second item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              TextUtils is a free  character counter that provides  instant word count and character count.
             </div>
           </div>
         </div>
@@ -110,7 +101,7 @@ let toogleStyle = () => {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              Accordion Item #3
+             <strong>Browser Compatible</strong> 
             </button>
           </h2>
           <div
@@ -131,9 +122,6 @@ let toogleStyle = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="container my-3" d-grid gap-2 col-6 mx-auto>
-      <button className="btn btn-primary"  onClick={toogleStyle}> {btnText}</button>
       </div>
     </div>
   );
